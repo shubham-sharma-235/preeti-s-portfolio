@@ -14,7 +14,7 @@
     --white:#fbf8f2;
     --ink:#191713;
     --ink-2:#242119;
-    --gold:#b3926a;            /* muted, used sparingly */
+    --gold:#b3926a;         
     --gold-deep:#96784f;
     --txt:#5c574d;
     --txt-soft:#8b857a;
@@ -25,6 +25,24 @@
     --display:'Italiana',serif;
     --serif:'Cormorant Garamond',serif;
     --sans:'Jost',sans-serif;
+  }
+  :root{
+    --bone:#f4f1ea;
+    --bone-2:#ebe7dd;
+    --card:#faf8f3;
+    --ink:#1d221c;
+    --ink-2:#002965;
+    --ink-3:#02327a;
+    --ink-4:#003688;
+    --ink-5:#0241a0;
+    --ink-6:#0250c6;
+    --ink-7:#002965;
+    --ink-8:#055ad8;
+    --soft:#5c6357;
+    --muted:#98988c;
+    --green:#38573d;
+    --green-deep:#24382a;
+    --mint:#dce8d4;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -46,10 +64,11 @@
   section{position:relative}
   .pad{padding:116px 0}
   .silk{
-    background:
+    /* background:
       radial-gradient(60% 45% at 18% 10%, rgba(255,253,248,.75), transparent 70%),
       radial-gradient(50% 40% at 86% 28%, rgba(255,252,245,.45), transparent 70%),
-      var(--cream);
+      var(--cream); */
+      background-color: var(--white);
   }
   .label{
     font-size:14px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--ink);
@@ -71,7 +90,7 @@
   .sec-head .more:hover .ar{transform:translateX(5px)}
   h2.big{
     font-family:var(--display);font-weight:400;letter-spacing:.02em;
-    font-size:clamp(36px,4.8vw,60px);line-height:1.08;text-transform:uppercase;
+    font-size:clamp(36px,4vw,48px);line-height:1.08;text-transform:uppercase;
   }
   .serif-it{font-family:var(--serif);font-style:italic;font-weight:500;text-transform:none;letter-spacing:0}
   .star{color:var(--gold);display:inline-block}
@@ -143,7 +162,7 @@
   .hero-left{padding-top:48px;position:relative;z-index:4}
   .hero-left .creative{margin-bottom:14px;display:block;color:var(--gold-deep)}
   .hero-left h1{
-    font-family:var(--serif);font-weight:600;font-size:clamp(26px,2.8vw,34px);
+    font-family:var(--serif);font-weight:600;font-size:clamp(26px,2.4vw,28px);
     line-height:1.25;text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px;
   }
   .hero-left p{
@@ -191,7 +210,7 @@
   /* ============ REFINED STRIP (was marquee) ============ */
   .strip{
     background:var(--white);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
-    padding:19px 0;overflow:hidden;position:relative;z-index:1;
+    padding:19px 0;overflow:hidden;position:relative;z-index:100;
   }
   .strip::before,.strip::after{
     content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
@@ -207,7 +226,7 @@
   @keyframes slide{to{transform:translateX(-50%)}}
 
   /* ============ ABOUT ============ */
-  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center}
+  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;}
   .about-photo{position:relative;padding:13px;border:1px solid var(--line)}
   .about-photo img{
     width:100%;aspect-ratio:4/4.8;object-fit:cover;object-position:center 12%;
@@ -285,7 +304,7 @@
   .tl-card p{font-size:13.5px;color:var(--txt);max-width:560px}
 
   /* ============ SERVICES (cover-image cards + popup) ============ */
-  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  /* .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .svc-card{
     background:var(--white);border:1px solid var(--line);cursor:pointer;
     position:relative;text-align:left;overflow:hidden;padding:0;
@@ -325,7 +344,442 @@
     display:inline-flex;align-items:center;gap:9px;
   }
   .svc-body .open .ar{transition:transform .3s ease}
-  .svc-card:hover .open .ar{transform:translateX(5px)}
+  .svc-card:hover .open .ar{transform:translateX(5px)} */
+
+  /* ============ LOCAL FONTS ============ */
+  
+  @font-face {
+    font-family: "Italiana";
+    src: url("/Italiana-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("/CormorantGaramond-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("/CormorantGaramond-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Jost";
+    src: url("/Jost-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Jost";
+    src: url("/Jost-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  /* ============ ROOT ============ */
+  
+  :root {
+    --cream: #f4efe7;
+    --cream-2: #ede7db;
+    --white: #fbf8f2;
+    --ink: #191713;
+    --ink-2: #242119;
+    --gold: #b3926a;
+    --gold-deep: #96784f;
+    --txt: #5c574d;
+    --txt-soft: #8b857a;
+    --txt-on-dark: #b0a89b;
+    --line: rgba(25, 23, 19, .13);
+    --line-soft: rgba(25, 23, 19, .08);
+    --line-dark: rgba(244, 239, 231, .15);
+  
+    --display: "Italiana", serif;
+    --serif: "Cormorant Garamond", serif;
+    --sans: "Jost", sans-serif;
+  }
+  
+  
+  /* ============ SERVICES — sticky stack ============ */
+  
+  .services {
+    padding: 40px 0 110px;
+  }
+  
+  .services-head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  
+  .services-head h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    font-size: clamp(34px, 5vw, 58px);
+  }
+  
+  .services-head h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0;
+  }
+  
+  .stack {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .s-card {
+    position: sticky;
+    border-radius: 26px;
+    border: 1px solid var(--line);
+    padding: 44px 48px;
+    min-height: 280px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 22px;
+    box-shadow: 0 -14px 40px rgba(29, 34, 28, .07);
+  }
+  
+  .s-card:nth-child(1) {
+    top: 110px;
+    background: var(--cream);
+  }
+  
+  .s-card:nth-child(2) {
+    top: 128px;
+    background: var(--cream-2);
+  }
+  
+  .s-card:nth-child(3) {
+    top: 146px;
+    background: var(--gold);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card:nth-child(4) {
+    top: 164px;
+    background: var(--ink);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card:nth-child(5) {
+    top: 182px;
+    background: var(--ink-2);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card:nth-child(6) {
+    top: 200px;
+    background: var(--ink-3);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card:nth-child(7) {
+    top: 218px;
+    background: var(--ink-4);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card:nth-child(8) {
+    top: 236px;
+    background: var(--ink-5);
+    color: var(--white);
+    border-color: transparent;
+  }
+  
+  .s-card .no {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    opacity: .55;
+    display: block;
+    margin-bottom: 18px;
+  }
+  
+  .s-card h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    font-size: clamp(24px, 3vw, 36px);
+    margin-bottom: 16px;
+  }
+  
+  .s-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    opacity: .78;
+    max-width: 480px;
+  }
+  
+  .s-card .pts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    padding-top: 44px;
+  }
+  
+  .s-card .pts span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    opacity: .7;
+  }
+  
+  
+  /* ============ WORK ============ */
+  
+  .work {
+    padding: 110px 0;
+    background: var(--cream-2);
+    border-top: 1px solid var(--line);
+  }
+  
+  .work-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  
+  .work-head h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    font-size: clamp(36px, 5.4vw, 62px);
+    line-height: 1;
+  }
+  
+  .work-head h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0;
+  }
+  
+  .work-head .cnt {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--txt-soft);
+  }
+  
+  .filters {
+    display: inline-flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 50px;
+    padding: 5px;
+  }
+  
+  .filter {
+    background: none;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--txt-soft);
+    padding: 10px 20px;
+    transition: color .3s ease, background .3s ease;
+  }
+  
+  .filter:hover {
+    color: var(--ink);
+  }
+  
+  .filter.active {
+    background: var(--ink);
+    color: var(--white);
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  
+  /* .card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity .6s ease,
+      transform .7s cubic-bezier(.16, 1, .3, 1),
+      box-shadow .4s ease;
+  } */
+  
+  .card.in {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .card:hover {
+    box-shadow: 0 22px 50px rgba(29, 34, 28, .13);
+  }
+  
+  .card.filter-out {
+    opacity: 0;
+    transform: scale(.94);
+    pointer-events: none;
+    transition:
+      opacity .28s ease,
+      transform .28s ease;
+  }
+  
+  .card.gone {
+    display: none;
+  }
+  
+  .card-media {
+    position: relative;
+    aspect-ratio: 4 / 3.4;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 14px;
+  }
+  
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.85);
+    transition:
+      transform .9s cubic-bezier(.2, .7, .2, 1),
+      filter .5s ease;
+  }
+  
+  .card:hover .card-media img {
+    transform: scale(1.08) rotate(.6deg);
+    filter: saturate(1);
+  }
+  
+  .card-media .veil {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(36, 56, 42, .4);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .card:hover .veil {
+    opacity: 1;
+  }
+  
+  .veil .view {
+    background: var(--white);
+    color: var(--ink);
+    border-radius: 40px;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateY(10px) scale(.92);
+    transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+  }
+  
+  .card:hover .veil .view {
+    transform: none;
+  }
+  
+  .card-body {
+    padding: 8px 20px 20px;
+  }
+  
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  
+  .card-body h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    font-size: 18.5px;
+  }
+  
+  .card-body .yr {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--txt-soft);
+  }
+  
+  .card-body .sub {
+    font-size: 12.5px;
+    color: var(--txt-soft);
+    margin-top: 6px;
+    line-height: 1.55;
+  }
+  
+  .card-cats {
+    display: flex;
+    gap: 6px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .ccat {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: 5px 11px;
+    color: var(--txt-soft);
+  }
+  
+  .grid-empty {
+    display: none;
+    text-align: center;
+    padding: 70px 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--txt-soft);
+  }
 
   /* modal */
   .modal{
@@ -610,6 +1064,9 @@
     .tl-card{grid-column:2}
   }
   @media (max-width:640px){
+    .badge{
+      display: none;
+    }
     .wrap{padding:0 24px}
     .pad{padding:86px 0}
     .grid,.svc-grid,.form-row,.foot-grid{grid-template-columns:1fr}
@@ -664,7 +1121,7 @@
       <div class="hero-under">
         <div class="hero-left">
           <span class="label creative" style="color:var(--gold-deep)">Creative</span>
-          <h1>Brand &amp;<br />Social Media<br />Manager</h1>
+          <h1>DIrecting Head &amp;<br />Brand<br />Manager</h1>
           <p>I build brand voices and social communities that combine strategy, storytelling, and consistency to help brands stand out.</p>
           <div class="hero-name">Preeti<br />Shekhawat</div>
         </div>
@@ -694,9 +1151,9 @@
   <div class="strk" id="strk">
     <span>Brand Strategy</span><span class="st">✦</span>
     <span>Social Media</span><span class="st">✦</span>
-    <span>Campaigns &amp; Launches</span><span class="st">✦</span>
     <span>Content Direction</span><span class="st">✦</span>
-    <span>Community</span><span class="st">✦</span>
+    <span>Creative Designing</span><span class="st">✦</span>
+    <span>Shoot Assistant</span><span class="st">✦</span>
   </div>
 </div>
 
@@ -711,176 +1168,154 @@
       <div class="about-photo reveal">
         <span class="ap-star star tw">✦</span>
         <img src="../assets/pfp-two.jpg" alt="Preeti at work" />
-        <div class="yrs"><div class="n"><span class="count" data-to="2">0</span>+</div><div class="l">Years of Craft</div></div>
+        <div class="yrs"><div class="n"><span class="count" data-to="2.5">0</span>+</div><div class="l">Years of Craft</div></div>
       </div>
       <div class="about-body reveal d1">
-        <h2 class="big">Strategy First.<br /><span class="serif-it">Stories always.</span></h2>
-        <p>I started six years ago writing captions for a friend's café — and fell in love with what happens when a brand finds its real voice. Since then I've managed brand and social for D2C startups, restaurants, fashion labels, and lifestyle companies.</p>
-        <p><b>My rule is simple: fewer posts, sharper stories, measurable growth.</b> No vanity metrics. No noise.</p>
-        <p class="about-quote">"Good social isn't louder — it's truer, told beautifully, again and again."</p>
+        <h2 class="big">Building brands <br /><span class="serif-it">beyond the brief..</span></h2>
+        <p>Hey, I am Preeti,<br> I like good ideas, better stories, and brands that know what they stand for. My work sits somewhere between strategy and creativity: finding the thought behind a brand, shaping the story, and turning it into something people actually notice, remember, and connect with.</p>
+        <p class="about-quote">"Branding with the intent..."</p>
         <div class="about-stats">
-          <div class="ast"><div class="n"><span class="count" data-to="2">0</span>M+</div><div class="l">Followers Grown</div></div>
-          <div class="ast"><div class="n"><span class="count" data-to="40">0</span>+</div><div class="l">Brands Managed</div></div>
-          <div class="ast"><div class="n"><span class="count" data-to="150">0</span>+</div><div class="l">Campaigns Run</div></div>
+          <div class="ast"><div class="n"><span class="count" data-to="54">0</span>+</div><div class="l">Brands Managed</div></div>
+          <div class="ast"><div class="n"><span class="count" data-to="2.5">0</span>+</div><div class="l">Years of experience</div></div>
+          <div class="ast"><div class="n"><span class="count" data-to="90">0</span>+</div><div class="l">Campaigns Ideas</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= JOURNEY — light timeline ================= -->
-<section class="pad journey" id="journey">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label">Work &amp; Education <span class="star tw">✦</span></span>
-      <span class="rule"></span>
-      <a class="more" href="#contact">Full CV on request <span class="ar">→</span></a>
+<!-- ================= SERVICES — sticky stack ================= -->
+<section class="services" id="services">
+  <div class="services-head reveal">
+    <h2>Areas Of <em>Expertise</em></h2>
+  </div>
+  
+  <div class="stack">
+  
+    <div class="s-card">
+      <div>
+        <span class="no">( 01 )</span>
+        <h3>Social Media Management</h3>
+        <p>
+          Managing social channels from planning to publishing, with a focus on
+          consistent communication relevant content and timely deliverables.
+        </p>
+      </div>
+      <div class="pts">
+        <span>Content planning</span>
+        <span>Shoot execution</span>
+        <span>Content calendars</span>
+        <span>Final execution</span>
+        <span>Analytics &amp; reporting</span>
+      </div>
+    </div>
+  
+    <div class="s-card">
+      <div>
+        <span class="no">( 02 )</span>
+        <h3>Shoot Assistance</h3>
+        <p>
+          Planning the shoot from the initial shoot plan through to the final moodboards,
+          ensuring the creative direction translates seamlessly into production.
+        </p>
+      </div>
+      <div class="pts">
+        <span>Shoot planning</span>
+        <span>Creative references</span>
+        <span>On-set assistance</span>
+        <span>Styling</span>
+        <span>Production coordination</span>
+      </div>
+    </div>
+   
+    <div class="s-card">
+      <div>
+        <span class="no">( 03 )</span>
+        <h3>Hand Modeling</h3>
+        <p>
+          Professional hand modeling for product, jewelry, and lifestyle
+          shoots, with a focus on precise poses, natural movement, and clean
+          product interaction—without showing the face.
+        </p>
+      </div>
+      <div class="pts">
+        <span>Product interaction</span>
+        <span>Hand posing</span>
+        <span>Beauty & jewelry</span>
+        <span>Faceless content</span>
+      </div>
+    </div>
+  
+    <div class="s-card">
+      <div>
+        <span class="no">( 04 )</span>
+        <h3>Copywriting</h3>
+        <p>
+          Writing clear, engaging copy that gives brands a distinct voice across
+          social media, campaigns, websites, and everyday communication.
+        </p>
+      </div>
+      <div class="pts">
+        <span>Social copy</span>
+        <span>Campaign copy</span>
+        <span>Brand voice</span>
+        <span>Website content</span>
+      </div>
     </div>
 
-    <div class="tl">
-      <div class="tl-item">
-        <div class="tl-year">2023<small>Present</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag">Work</span>
-          <h4>Independent Brand &amp; Social Media Manager</h4>
-          <div class="co">Self-employed · Worldwide</div>
-          <p>End-to-end brand and social engagements for 8–10 select clients a year — positioning, Instagram &amp; LinkedIn content systems, launch campaigns, monthly growth reporting.</p>
-        </div>
+    <div class="s-card">
+      <div>
+        <span class="no">( 05 )</span>
+        <h3>Graphic Design</h3>
+        <p>
+          Designing clean, brand-aligned basic visuals for social media, campaigns,
+          presentations, and other everyday brand communication.
+        </p>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2021<small>— 2023</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag">Work</span>
-          <h4>Senior Social Media Manager</h4>
-          <div class="co">Northwind Agency · Mumbai</div>
-          <p>Led a team of four across 12 retainer accounts in beauty and F&amp;B. Introduced a reels-first framework that lifted average engagement 4x year over year.</p>
-        </div>
+      <div class="pts">
+        <span>Social creatives</span>
+        <span>Campaign assets</span>
+        <span>Presentations</span>
+        <span>Visual layouts</span>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2019<small>— 2021</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag">Work</span>
-          <h4>Brand Executive</h4>
-          <div class="co">Hearth &amp; Co. · Jaipur</div>
-          <p>Owned organic social, influencer partnerships, and community — scaling the brand from 4K to 210K followers across two national launches.</p>
-        </div>
+    </div>
+   
+    <div class="s-card">
+      <div>
+        <span class="no">( 06 )</span>
+        <h3>Performance Marketing &amp; SEO</h3>
+        <p>
+          A basic understanding of paid marketing and SEO, with knowledge of
+          campaign metrics, keyword research, and simple practices that support
+          better online visibility.
+        </p>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2018<small>— 2019</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag edu">Education</span>
-          <h4>PG Diploma, Digital Marketing</h4>
-          <div class="co">MICA · Ahmedabad</div>
-          <p>Specialised in brand communication, consumer behaviour, and performance marketing fundamentals.</p>
-        </div>
+      <div class="pts">
+        <span>Paid marketing basics</span>
+        <span>Performance metrics</span>
+        <span>SEO fundamentals</span>
+        <span>Keyword research</span>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-year">2015<small>— 2018</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag edu">Education</span>
-          <h4>B.A. Mass Communication</h4>
-          <div class="co">University of Rajasthan · Jaipur</div>
-          <p>Focus on media writing, advertising, and visual storytelling. Led the campus media society for two years.</p>
-        </div>
+    </div>
+  
+    <div class="s-card">
+      <div>
+        <span class="no">( 07 )</span>
+        <h3>Basic Video Editing</h3>
+        <p>
+          Editing basic short-form content for social platforms with clean cuts,
+          engaging pacing, captions, music, and a clear visual flow.
+        </p>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-year">Now<small>Ongoing</small></div>
-        <div class="tl-spine"><span class="seg"></span><span class="node"></span></div>
-        <div class="tl-card">
-          <span class="tl-tag edu">Certification</span>
-          <h4>Meta Blueprint · Google Analytics</h4>
-          <div class="co">Meta &amp; Google</div>
-          <p>Certified in Meta media buying and GA4 — keeping the toolkit as current as the trends.</p>
-        </div>
+      <div class="pts">
+        <span>Reels</span>
+        <span>Short-form edits</span>
+        <span>Captions</span>
+        <span>Social videos</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ================= SERVICES ================= -->
-<section class="pad silk" id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label">Services <span class="star tw">✦</span></span>
-      <span class="rule"></span>
-    </div>
-
-    <div class="svc-grid">
-      <button class="svc-card reveal" data-svc="strategy">
-        <span class="svc-cover">
-          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=900&auto=format&fit=crop" alt="Brand strategy planning" loading="lazy" />
-          <span class="shade"></span>
-          <span class="no">01</span>
-        </span>
-        <span class="svc-body">
-          <span class="head">
-            <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
-            <h3>Brand Strategy</h3>
-          </span>
-          <p>Positioning, voice &amp; identity direction that make you unmistakable before a single post goes live.</p>
-          <span class="open">Explore <span class="ar">→</span></span>
-        </span>
-      </button>
-
-      <button class="svc-card reveal d1" data-svc="social">
-        <span class="svc-cover">
-          <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=900&auto=format&fit=crop" alt="Social media management" loading="lazy" />
-          <span class="shade"></span>
-          <span class="no">02</span>
-        </span>
-        <span class="svc-body">
-          <span class="head">
-            <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
-            <h3>Social Media Management</h3>
-          </span>
-          <p>Instagram &amp; LinkedIn run end to end — calendar to community to honest reporting.</p>
-          <span class="open">Explore <span class="ar">→</span></span>
-        </span>
-      </button>
-
-      <button class="svc-card reveal" data-svc="campaign">
-        <span class="svc-cover">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop" alt="Campaign analytics" loading="lazy" />
-          <span class="shade"></span>
-          <span class="no">03</span>
-        </span>
-        <span class="svc-body">
-          <span class="head">
-            <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4.5 14.5 3 21l6.5-1.5"/><path d="M14 4.5c3 1.5 5.5 4 5.5 8L13 19c-4-.5-6.5-3-8-5.5z"/><circle cx="14.5" cy="9.5" r="1.6"/></svg></span>
-            <h3>Campaigns &amp; Launches</h3>
-          </span>
-          <p>Drops, festive pushes &amp; influencer collabs designed as stories with a measurable payoff.</p>
-          <span class="open">Explore <span class="ar">→</span></span>
-        </span>
-      </button>
-
-      <button class="svc-card reveal d1" data-svc="content">
-        <span class="svc-cover">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=900&auto=format&fit=crop" alt="Content shoot" loading="lazy" />
-          <span class="shade"></span>
-          <span class="no">04</span>
-        </span>
-        <span class="svc-body">
-          <span class="head">
-            <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg></span>
-            <h3>Content Direction</h3>
-          </span>
-          <p>Reels, shoots &amp; UGC briefs that keep every frame of your feed unmistakably on-brand.</p>
-          <span class="open">Explore <span class="ar">→</span></span>
-        </span>
-      </button>
-    </div>
-  </div>
 </section>
 
 <!-- service modal -->
@@ -995,7 +1430,7 @@
 </section>
 
 <!-- ================= PAST WORK ================= -->
-<section class="pad silk" id="past">
+<!-- <section class="pad silk" id="past">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="label">Past Work <span class="star tw">✦</span></span>
@@ -1010,7 +1445,152 @@
       <a class="arc" href="#"><span class="yr">2019</span><h4>Hearth &amp; Co. — First 100K Push</h4><span class="cat">Social Media</span><span class="go">→</span></a>
     </div>
   </div>
+</section> -->
+
+<!-- ================= JOURNEY — light timeline ================= -->
+
+<section class="pad journey" id="journey">
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="label">Work &amp; Education <span class="star tw">✦</span></span>
+      <span class="rule"></span>
+      <a class="more" href="./preeti-shekhawat.pdf">Resume<span class="ar">→</span></a>
+    </div>
+    
+    <div class="tl">
+    
+      <!-- 01 — Current Role -->
+      <div class="tl-item">
+        <div class="tl-year">2025<small>Present</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag">Work</span>
+          <h4>Brand Manager</h4>
+          <div class="co">Qrious Curators</div>
+          <p>
+            Managing brand and social media with a focus on content planning,
+            brand grids, trend-led ideas, and creative execution. I also work
+            closely with designers, editors, interns, and clients to keep
+            campaigns and shoots moving smoothly.
+          </p>
+        </div>
+      </div>
+    
+    
+      <!-- 02 — MBA -->
+      <div class="tl-item">
+        <div class="tl-year">2023<small>— 2025</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag edu">Education</span>
+          <h4>MBA</h4>
+          <div class="co">Banasthali Vidyapith</div>
+          <p>
+            Built a stronger foundation in business, management, marketing,
+            and strategic thinking alongside practical experience in digital
+            and brand management.
+          </p>
+        </div>
+      </div>
+    
+    
+      <!-- 03 — Digital Marketing Internship -->
+      <div class="tl-item">
+        <div class="tl-year">2024<small>May — Nov</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag">Work</span>
+          <h4>Digital Marketing Intern</h4>
+          <div class="co">HashTAGit Private Limited</div>
+          <p>
+            Worked across social media, content creation, and advertising
+            campaigns. Prepared monthly performance reports, coordinated
+            campaign execution with clients, and created video content for
+            social platforms.
+          </p>
+        </div>
+      </div>
+    
+    
+      <!-- 04 — BBA -->
+      <div class="tl-item">
+        <div class="tl-year">2020<small>— 2023</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag edu">Education</span>
+          <h4>BBA</h4>
+          <div class="co">Maharishi Arvind Institute of Science &amp; Management</div>
+          <p>
+            Developed a foundation in business and management while building
+            an interest in marketing, communication, and creative problem-solving.
+          </p>
+        </div>
+      </div>
+    
+    
+      <!-- 05 — Academic Project -->
+      <div class="tl-item">
+        <div class="tl-year">2023<small>Project</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag edu">Project</span>
+          <h4>B-देसी — Entrepreneurship Simulation</h4>
+          <div class="co">Academic Project</div>
+          <p>
+            Developed a business concept inspired by Indian culture and values,
+            covering customer research, market positioning, marketing strategy,
+            and brand identity.
+          </p>
+        </div>
+      </div>
+    
+    
+      <!-- 06 — Dabur Project -->
+      <div class="tl-item">
+        <div class="tl-year">2024<small>Project</small></div>
+        <div class="tl-spine">
+          <span class="seg"></span>
+          <span class="node"></span>
+        </div>
+    
+        <div class="tl-card">
+          <span class="tl-tag">Project</span>
+          <h4>Dabur — Modern Trade Sales Project</h4>
+          <div class="co">Field Project · 2024</div>
+          <p>
+            Worked on product visibility and retail execution by studying
+            share of shelf, product placement, and availability while gathering
+            insights directly from retailers.
+          </p>
+        </div>
+      </div>
+    
+    </div>
+    
+  </div>
 </section>
+
 
 <!-- ================= TESTIMONIALS ================= -->
 <section class="pad testi" id="testimonials">
